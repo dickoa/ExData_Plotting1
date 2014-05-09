@@ -5,6 +5,7 @@ if (!file.exists("data/household_power_consumption.txt")) {
     file.remove("data/householdpowconsump.zip")
 }
 
+
 consump <- read.table("data/household_power_consumption.txt",
                       na.strings = "?",
                       header = TRUE,
@@ -22,7 +23,7 @@ consump <- subset(consump,
                   Date >= as.Date("2007-02-01"))
 str(consump)
 
-png("figure/plot1.png", bg = "transparent")
+png("graphic/plot1.png", bg = "transparent")
 hist(consump$Global_active_power,
      col = "red",
      xlab = "Global Active Power (kilowatts)",

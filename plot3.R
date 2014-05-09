@@ -25,7 +25,7 @@ consump <- subset(consump,
 str(consump)
 
 
-png("figure/plot3.png", bg = "transparent")
+png("graphic/plot3.png", bg = "transparent")
 with(consump, {
 plot(datetime,
      Sub_metering_1,

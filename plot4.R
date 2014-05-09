@@ -25,7 +25,7 @@ consump <- subset(consump,
 str(consump)
 
 
-png("figure/plot4.png", bg = "transparent")
+png("graphic/plot4.png", bg = "transparent")
 par(mfrow = c(2, 2))
 with(consump, {
 plot(datetime,

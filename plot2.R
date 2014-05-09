@@ -24,7 +24,7 @@ consump <- subset(consump,
                    Date >= as.Date("2007-02-01"))
 
 
-png("figure/plot2.png", bg = "transparent")
+png("graphic/plot2.png", bg = "transparent")
 with(consump {
 plot(datetime,
      Global_active_power,
