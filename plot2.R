@@ -1,3 +1,10 @@
+url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+if (!file.exists("data/household_power_consumption.txt")) {
+    download.file(url, "data/householdpowconsump.zip", method = "curl")
+    unzip("data/householdpowconsump.zip", exdir = "data")
+    file.remove("data/householdpowconsump.zip")
+}
+
 consump <- read.table("data/household_power_consumption.txt",
                       na.strings = "?",
                       header = TRUE,
@@ -16,10 +23,13 @@ consump <- subset(consump,
                    Date <= as.Date("2007-02-02") &
                    Date >= as.Date("2007-02-01"))
 
+
 png("figure/plot2.png", bg = "transparent")
-plot(consump$datetime,
-     consump$Global_active_power,
+with(consump {
+plot(datetime,
+     Global_active_power,
      xlab = "",
      ylab = "Global Active Power (kilowatts)",
      type = "l")
+})
 dev.off()

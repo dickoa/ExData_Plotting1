@@ -1,3 +1,10 @@
+url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+if (!file.exists("data/household_power_consumption.txt")) {
+    download.file(url, "data/householdpowconsump.zip", method = "curl")
+    unzip("data/householdpowconsump.zip", exdir = "data")
+    file.remove("data/householdpowconsump.zip")
+}
+
 consump <- read.table("data/household_power_consumption.txt",
                       na.strings = "?",
                       header = TRUE,
@@ -19,31 +26,31 @@ str(consump)
 
 
 png("figure/plot4.png", bg = "transparent")
-par(mfrow = c(2, 2), mar = c(4, 4, 3.8, 1.8))
-plot(consump$datetime,
-     consump$Global_active_power,
+par(mfrow = c(2, 2))
+with(consump, {
+plot(datetime,
+     Global_active_power,
      xlab = "",
      ylab = "Global Active Power (kilowatts)",
      type = "l")
 
 
-plot(consump$datetime,
-     consump$Voltage,
-     xlab = "datetime",
+plot(datetime,
+     Voltage,
      ylab = "Voltage",
      type = "l")
 
 
-plot(consump$datetime,
-     consump$Sub_metering_1,
+plot(datetime,
+     Sub_metering_1,
      xlab = "",
      ylab = "Energy sub metering",
      type = "l")
-lines(consump$datetime,
-     consump$Sub_metering_2,
+lines(datetime,
+     Sub_metering_2,
      col = "red")
-lines(consump$datetime,
-     consump$Sub_metering_3,
+lines(datetime,
+     Sub_metering_3,
      col = "blue")
 legend("topright",
        legend = paste0("Sub_metering_", 1:3),
@@ -52,9 +59,10 @@ legend("topright",
        bty = "n")
 
 
-plot(consump$datetime,
-     consump$Global_reactive_power,
-     xlab = "datetime",
+plot(datetime,
+     Global_reactive_power,
      ylab = "Global_reactive_power",
      type = "l")
+})
+
 dev.off()
