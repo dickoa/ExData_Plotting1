@@ -15,12 +15,13 @@ consump <- read.table("data/household_power_consumption.txt",
                       stringsAsFactors = FALSE)
 
 str(consump)
+
+## Parse time data
 consump$datetime <- paste(consump$Date, consump$Time)
 consump$datetime <- strptime(consump$datetime, "%d/%m/%Y %H:%M:%S")
 consump$Date <- as.Date(consump$Date, "%d/%m/%Y")
 
-
-
+## Subsetting data
 consump <- subset(consump,
                    Date <= as.Date("2007-02-02") &
                    Date >= as.Date("2007-02-01"))
