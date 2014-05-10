@@ -2,7 +2,6 @@
 url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 
 if (!file.exists("data/household_power_consumption.txt")) {
-    dir.create("data")
     download.file(url, "data/householdpowconsump.zip", method = "curl")
     unzip("data/householdpowconsump.zip", exdir = "data")
     file.remove("data/householdpowconsump.zip")
@@ -49,6 +48,6 @@ lines(datetime,
 legend("topright",
        legend = paste0("Sub_metering_", 1:3),
        col = c("black", "red", "blue"),
-       lty = rep("solid", 3))
+       lty = "solid")
 })
 dev.off()
