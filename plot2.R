@@ -29,7 +29,7 @@ consump <- subset(consump,
 
 
 png("graphic/plot2.png", bg = "transparent")
-with(consump {
+with(consump, {
 plot(datetime,
      Global_active_power,
      xlab = "",
