@@ -112,3 +112,7 @@ The four plots that you will need to construct are shown below.
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
+
+## Important note
+
+All the plot created by the R code (`plot1.R`, `plot2.R`, etc.) were saved in the `graphic` directory
