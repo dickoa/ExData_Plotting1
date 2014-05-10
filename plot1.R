@@ -32,5 +32,5 @@ png("graphic/plot1.png", bg = "transparent")
 hist(consump$Global_active_power,
      col = "red",
      xlab = "Global Active Power (kilowatts)",
-     main = "Global Acative Power")
+     main = "Global Active Power")
 dev.off()
