@@ -115,4 +115,4 @@ The four plots that you will need to construct are shown below.
 
 ## Important note
 
-All the plot created by the R code (`plot1.R`, `plot2.R`, etc.) were saved in the `graphic` directory
+All the plot created by the R code (`plot1.R`, `plot2.R`, etc.) were saved in the `submitted_plot` directory

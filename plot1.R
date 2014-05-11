@@ -28,7 +28,7 @@ consump <- subset(consump,
                   Date >= as.Date("2007-02-01"))
 str(consump)
 
-png("graphic/plot1.png", bg = "transparent")
+png("submitted_plot/plot1.png", bg = "transparent")
 hist(consump$Global_active_power,
      col = "red",
      xlab = "Global Active Power (kilowatts)",
